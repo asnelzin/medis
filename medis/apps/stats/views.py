@@ -6,13 +6,13 @@ from datetime import datetime
 
 from django.http import HttpResponse
 from django.core.serializers.json import DjangoJSONEncoder
-from django.views.generic import View, FormView
+from django.views.generic import View, FormView, TemplateView
 
-from medis.apps.tickets.forms import FilterForm
-from medis.apps.tickets.models import Ticket
+from medis.apps.stats.forms import FilterForm
+from medis.apps.stats.models import Ticket, Speciality
 
 
-class AjaxTicketsList(View):
+class AjaxMonthStatsView(View):
     def get_form_errors(self, form):
         return dict([(k, [unicode(e) for e in v]) for k, v in form.errors.items()])
 
@@ -30,9 +30,7 @@ class AjaxTicketsList(View):
         if request.is_ajax():
             form = FilterForm(request.POST)
             if form.is_valid():
-                data = {
-                    'stats_data': Ticket.objects.count_by_speciality(form.data['month'], form.data['year'])
-                }
+                data = Ticket.objects.get_monthly_stats(form.data['month'], form.data['year'])
                 return self.render_json_response(self.data_to_json(data))
             else:
                 return self.render_form_error_json_response(form)
@@ -42,12 +40,33 @@ class AjaxTicketsList(View):
 
 class MonthStatsView(FormView):
     form_class = FilterForm
-    template_name = 'tickets/month_stats.html'
+    template_name = 'stats/month.html'
 
     def get_context_data(self, **kwargs):
         context = super(MonthStatsView, self).get_context_data(**kwargs)
 
         current_date = datetime.now()
-        data = Ticket.objects.count_by_speciality(current_date.month, current_date.year)
-        context.update({'stats_data': data})
+        data = Ticket.objects.get_monthly_stats(current_date.month, current_date.year)
+        context.update({
+            'current_date': current_date,
+            'data': data
+        })
         return context
+
+
+class SpecialityStatsView(TemplateView):
+    template_name = 'stats/speciality.html'
+
+    def get(self, request, *args, **kwargs):
+        speciality = Speciality.objects.get_or_none(pk=request.GET.get('speciality'))
+        form = FilterForm(request.GET)
+        if form.is_valid() and speciality:
+            context = super(SpecialityStatsView, self).get_context_data(**kwargs)
+            data = Ticket.objects.get_speciality_stats(speciality, request.GET['month'], request.GET['year'])
+            context.update({
+                'speciality_name': speciality.name,
+                'data': data
+            })
+            return self.render_to_response(context)
+        else:
+            return HttpResponse('Bad Request', status=400)

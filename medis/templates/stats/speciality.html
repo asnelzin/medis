@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="row">
+        <h2>{{ speciality_name }}</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Врач</th>
+                <th>Кол-во талонов</th>
+                <th>Кол-во пациентов</th>
+            </tr>
+            </thead>
+            {% for doctor in data %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ doctor.name }}</td>
+                    <td>{{ doctor.tickets }}</td>
+                    <td>{{ doctor.patients }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
+

@@ -6,7 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
 
-    url(r'^tickets/', include('medis.apps.tickets.urls', namespace='tickets')),
+    url(r'^stats/', include('medis.apps.stats.urls', namespace='stats')),
 
     url(r'^admin/', include(admin.site.urls)),
 )

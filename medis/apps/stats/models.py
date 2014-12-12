@@ -1,8 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.contrib import admin
+from django.core.exceptions import ObjectDoesNotExist
 
 from django.db import models
+
+
+class SpecialityManager(models.Manager):
+    def get_or_none(self, *args, **kwargs):
+        try:
+            return self.get(*args, **kwargs)
+        except ObjectDoesNotExist:
+            return None
 
 
 class Speciality(models.Model):
@@ -15,6 +24,8 @@ class Speciality(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    objects = SpecialityManager()
 
 
 admin.site.register(Speciality)
@@ -50,28 +61,32 @@ admin.site.register(Patient)
 
 
 class TicketManager(models.Manager):
-    def count_by_speciality(self, month, year):
-        answer = {}
+    def get_monthly_stats(self, month, year):
+        data = []
         for specialty in Speciality.objects.all():
             tickets = Ticket.objects.filter(doctor__in=specialty.doctor_set.all(), datetime__month=month,
-                                                      datetime__year=year)
+                                            datetime__year=year)
             patients = tickets.exclude(patient__isnull=True)
-            answer[specialty.name] = {
+            data.append({
+                'pk': specialty.pk,
+                'name': specialty.name,
                 'tickets': tickets.count(),
                 'patients': patients.count()
-            }
-        return answer
+            })
+        return data
 
-    def count_by_doctor(self, specialty, month, year):
-        answer = {}
+    def get_speciality_stats(self, specialty, month, year):
+        data = []
         for doctor in Doctor.objects.filter(specialty=specialty):
             tickets = Ticket.objects.filter(doctor=doctor, datetime__month=month, datetime__year=year)
             patients = tickets.exclude(patient__isnull=True)
-            answer[doctor.name] = {
+            data.append({
+                'pk': doctor.pk,
+                'name': doctor.name,
                 'tickets': tickets.count(),
                 'patients': patients.count()
-            }
-        return answer
+            })
+        return data
 
 
 class Ticket(models.Model):

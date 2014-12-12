@@ -86,7 +86,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.staticfiles',
 
-    'medis.apps.tickets',
+    'medis.apps.stats',
 )
 
 #URL

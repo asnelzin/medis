@@ -4,13 +4,13 @@
 
 {% block js %}
     {{ block.super }}
-    <script src="{% static 'js/pages/tickets.js' %}"></script>
+    <script src="{% static 'js/pages/stats.js' %}"></script>
 {% endblock %}
 
 {% block content %}
     <div class="row">
         <form id="filter-form" class="form-inline" method="post" role="form"
-              action="{% url 'tickets:month_stats_ajax' %}">
+              action="{% url 'stats:month-ajax' %}">
             {% csrf_token %}
             <h2 class="form-signin-heading">Месечная статистика количества посещений</h2>
             {{ form.non_field_errors }}
@@ -48,12 +48,14 @@
                 <th>Кол-во пациентов</th>
             </tr>
             </thead>
-            {% for specialty, stat in stats_data.items %}
+            {% for specialty in data %}
                 <tr>
                     <td>{{ forloop.counter }}</td>
-                    <td>{{ specialty }}</td>
-                    <td>{{ stat.tickets }}</td>
-                    <td>{{ stat.patients }}</td>
+                    <td><a href="{% url 'stats:month-speciality'%}?speciality={{ specialty.pk }}&month={{ current_date.month }}&year={{ current_date.year }}">
+                        {{ specialty.name }}
+                    </a></td>
+                    <td>{{ specialty.tickets }}</td>
+                    <td>{{ specialty.patients }}</td>
                 </tr>
             {% endfor %}
         </table>

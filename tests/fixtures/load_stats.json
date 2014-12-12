@@ -1,1 +1,283 @@
-[{"pk": 1, "model": "stats.speciality", "fields": {"name": "\u0422\u0435\u0440\u0430\u043f\u0435\u0432\u0442"}}, {"pk": 2, "model": "stats.speciality", "fields": {"name": "\u0422\u0440\u0430\u0432\u043c\u043e\u0442\u043e\u043b\u043e\u0433"}}, {"pk": 3, "model": "stats.speciality", "fields": {"name": "\u041f\u0435\u0434\u0438\u0430\u0442\u0440"}}, {"pk": 4, "model": "stats.speciality", "fields": {"name": "\u041f\u0441\u0438\u0445\u0438\u0430\u0442\u0440"}}, {"pk": 1, "model": "stats.doctor", "fields": {"name": "\u0411\u044b\u043a\u043e\u0432 \u0410\u043d\u0434\u0440\u0435\u0439 \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447 ", "specialty": 1}}, {"pk": 2, "model": "stats.doctor", "fields": {"name": "\u041b\u043e\u0431\u0430\u043d\u043e\u0432 \u0421\u0435\u043c\u0451\u043d \u0421\u0435\u043c\u0451\u043d\u043e\u0432\u0438\u0447", "specialty": 2}}, {"pk": 3, "model": "stats.doctor", "fields": {"name": "\u041b\u0435\u0432\u0438\u043d \u0411\u043e\u0440\u0438\u0441 \u0410\u0440\u043a\u0430\u0434\u044c\u0435\u0432\u0438\u0447", "specialty": 1}}, {"pk": 4, "model": "stats.doctor", "fields": {"name": "\u0427\u0435\u0440\u043d\u043e\u0443\u0441 \u0412\u0430\u0440\u0432\u0430\u0440\u0430 \u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u043d\u0430 ", "specialty": 3}}, {"pk": 5, "model": "stats.doctor", "fields": {"name": "\u0423\u043b\u044c\u044f\u043d\u043e\u0432\u0430 \u041f\u043e\u043b\u0438\u043d\u0430 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u043d\u0430", "specialty": 3}}, {"pk": 6, "model": "stats.doctor", "fields": {"name": "\u041a\u0430\u043b\u0438\u043d\u0438\u043d\u0430 \u0421\u043e\u0444\u044c\u044f \u042f\u043a\u043e\u0432\u043b\u0435\u0432\u043d\u0430 ", "specialty": 3}}, {"pk": 7, "model": "stats.doctor", "fields": {"name": "\u041a\u043e\u0440\u043d\u0435\u0435\u0432 \u041c\u0430\u043a\u0441\u0438\u043c \u041b\u0435\u043e\u043d\u0438\u0434\u043e\u0432\u0438\u0447 ", "specialty": 4}}, {"pk": 1, "model": "stats.patient", "fields": {"name": "\u0420\u043e\u043c\u0430\u043d\u0435\u043d\u043a\u043e \u0413\u043b\u0435\u0431 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447"}}, {"pk": 2, "model": "stats.patient", "fields": {"name": "\u041c\u0430\u043b\u044c\u0446\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0414\u0435\u043d\u0438\u0441\u043e\u0432\u0438\u0447"}}, {"pk": 3, "model": "stats.patient", "fields": {"name": "\u0421\u043a\u0440\u044f\u0431\u0438\u043d\u0430 \u041b\u044e\u0431\u043e\u0432\u044c \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u043d\u0430"}}, {"pk": 4, "model": "stats.patient", "fields": {"name": "\u041a\u043e\u0440\u043e\u043b\u0451\u0432\u0430 \u041c\u0430\u0440\u0433\u0430\u0440\u0438\u0442\u0430 \u041f\u0430\u0432\u043b\u043e\u0432\u043d\u0430"}}, {"pk": 5, "model": "stats.patient", "fields": {"name": "\u042f\u0440\u043e\u0441\u043b\u0430\u0432\u0441\u043a\u0438\u0439 \u0410\u043d\u0442\u043e\u043d \u041f\u0430\u0432\u043b\u043e\u0432\u0438\u0447"}}, {"pk": 1, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:00:00", "patient": null, "doctor": 1}}, {"pk": 2, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:15:00", "patient": null, "doctor": 1}}, {"pk": 3, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:30:00", "patient": 5, "doctor": 1}}, {"pk": 4, "model": "stats.ticket", "fields": {"datetime": "2014-08-11T12:00:00", "patient": null, "doctor": 1}}, {"pk": 5, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:00:00", "patient": 1, "doctor": 2}}, {"pk": 6, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:15:00", "patient": null, "doctor": 2}}, {"pk": 7, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:30:00", "patient": null, "doctor": 2}}, {"pk": 8, "model": "stats.ticket", "fields": {"datetime": "2014-08-11T12:00:00", "patient": 5, "doctor": 2}}, {"pk": 9, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:00:00", "patient": 1, "doctor": 4}}, {"pk": 10, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:15:00", "patient": 3, "doctor": 4}}, {"pk": 11, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:30:00", "patient": null, "doctor": 4}}, {"pk": 12, "model": "stats.ticket", "fields": {"datetime": "2014-08-11T12:00:00", "patient": 1, "doctor": 4}}, {"pk": 13, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:00:00", "patient": 4, "doctor": 7}}, {"pk": 14, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:15:00", "patient": 3, "doctor": 7}}, {"pk": 15, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:30:00", "patient": 2, "doctor": 7}}, {"pk": 16, "model": "stats.ticket", "fields": {"datetime": "2014-08-11T12:00:00", "patient": 1, "doctor": 7}}, {"pk": 17, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:00:00", "patient": 4, "doctor": 5}}, {"pk": 18, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:15:00", "patient": 3, "doctor": 5}}, {"pk": 19, "model": "stats.ticket", "fields": {"datetime": "2014-08-10T12:30:00", "patient": 3, "doctor": 5}}, {"pk": 20, "model": "stats.ticket", "fields": {"datetime": "2014-08-11T12:00:00", "patient": 1, "doctor": 5}}]
+[
+  {
+    "pk": 1,
+    "model": "stats.speciality",
+    "fields": {"name": "\u0422\u0435\u0440\u0430\u043f\u0435\u0432\u0442"}
+  },
+  {
+    "pk": 2,
+    "model": "stats.speciality",
+    "fields": {"name": "\u0422\u0440\u0430\u0432\u043c\u043e\u0442\u043e\u043b\u043e\u0433"}
+  },
+  {
+    "pk": 3,
+    "model": "stats.speciality",
+    "fields": {"name": "\u041f\u0435\u0434\u0438\u0430\u0442\u0440"}
+  },
+  {
+    "pk": 4,
+    "model": "stats.speciality",
+    "fields": {"name": "\u041f\u0441\u0438\u0445\u0438\u0430\u0442\u0440"}
+  },
+  {
+    "pk": 1,
+    "model": "stats.doctor",
+    "fields": {
+      "name": "\u0411\u044b\u043a\u043e\u0432 \u0410\u043d\u0434\u0440\u0435\u0439 \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447 ",
+      "specialty": 1
+    }
+  },
+  {
+    "pk": 2,
+    "model": "stats.doctor",
+    "fields": {
+      "name": "\u041b\u043e\u0431\u0430\u043d\u043e\u0432 \u0421\u0435\u043c\u0451\u043d \u0421\u0435\u043c\u0451\u043d\u043e\u0432\u0438\u0447",
+      "specialty": 2
+    }
+  },
+  {
+    "pk": 3,
+    "model": "stats.doctor",
+    "fields": {
+      "name": "\u041b\u0435\u0432\u0438\u043d \u0411\u043e\u0440\u0438\u0441 \u0410\u0440\u043a\u0430\u0434\u044c\u0435\u0432\u0438\u0447",
+      "specialty": 1
+    }
+  },
+  {
+    "pk": 4,
+    "model": "stats.doctor",
+    "fields": {
+      "name": "\u0427\u0435\u0440\u043d\u043e\u0443\u0441 \u0412\u0430\u0440\u0432\u0430\u0440\u0430 \u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u043d\u0430 ",
+      "specialty": 3
+    }
+  },
+  {
+    "pk": 5,
+    "model": "stats.doctor",
+    "fields": {
+      "name": "\u0423\u043b\u044c\u044f\u043d\u043e\u0432\u0430 \u041f\u043e\u043b\u0438\u043d\u0430 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u043d\u0430",
+      "specialty": 3
+    }
+  },
+  {
+    "pk": 6,
+    "model": "stats.doctor",
+    "fields": {
+      "name": "\u041a\u0430\u043b\u0438\u043d\u0438\u043d\u0430 \u0421\u043e\u0444\u044c\u044f \u042f\u043a\u043e\u0432\u043b\u0435\u0432\u043d\u0430 ",
+      "specialty": 3
+    }
+  },
+  {
+    "pk": 7,
+    "model": "stats.doctor",
+    "fields": {
+      "name": "\u041a\u043e\u0440\u043d\u0435\u0435\u0432 \u041c\u0430\u043a\u0441\u0438\u043c \u041b\u0435\u043e\u043d\u0438\u0434\u043e\u0432\u0438\u0447 ",
+      "specialty": 4
+    }
+  },
+  {
+    "pk": 1,
+    "model": "stats.patient",
+    "fields": {"name": "\u0420\u043e\u043c\u0430\u043d\u0435\u043d\u043a\u043e \u0413\u043b\u0435\u0431 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447"}
+  },
+  {
+    "pk": 2,
+    "model": "stats.patient",
+    "fields": {"name": "\u041c\u0430\u043b\u044c\u0446\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0414\u0435\u043d\u0438\u0441\u043e\u0432\u0438\u0447"}
+  },
+  {
+    "pk": 3,
+    "model": "stats.patient",
+    "fields": {"name": "\u0421\u043a\u0440\u044f\u0431\u0438\u043d\u0430 \u041b\u044e\u0431\u043e\u0432\u044c \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u043d\u0430"}
+  },
+  {
+    "pk": 4,
+    "model": "stats.patient",
+    "fields": {"name": "\u041a\u043e\u0440\u043e\u043b\u0451\u0432\u0430 \u041c\u0430\u0440\u0433\u0430\u0440\u0438\u0442\u0430 \u041f\u0430\u0432\u043b\u043e\u0432\u043d\u0430"}
+  },
+  {
+    "pk": 5,
+    "model": "stats.patient",
+    "fields": {"name": "\u042f\u0440\u043e\u0441\u043b\u0430\u0432\u0441\u043a\u0438\u0439 \u0410\u043d\u0442\u043e\u043d \u041f\u0430\u0432\u043b\u043e\u0432\u0438\u0447"}
+  },
+  {
+    "pk": 1,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:00:00",
+      "patient": null,
+      "doctor": 1
+    }
+  },
+  {
+    "pk": 2,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:15:00",
+      "patient": null,
+      "doctor": 1
+    }
+  },
+  {
+    "pk": 3,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:30:00",
+      "patient": 5,
+      "doctor": 1
+    }
+  },
+  {
+    "pk": 4,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-11T12:00:00",
+      "patient": null,
+      "doctor": 1
+    }
+  },
+  {
+    "pk": 5,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:00:00",
+      "patient": 1,
+      "doctor": 2
+    }
+  },
+  {
+    "pk": 6,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:15:00",
+      "patient": null,
+      "doctor": 2
+    }
+  },
+  {
+    "pk": 7,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:30:00",
+      "patient": null,
+      "doctor": 2
+    }
+  },
+  {
+    "pk": 8,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-11T12:00:00",
+      "patient": 5,
+      "doctor": 2
+    }
+  },
+  {
+    "pk": 9,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:00:00",
+      "patient": 1,
+      "doctor": 4
+    }
+  },
+  {
+    "pk": 10,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:15:00",
+      "patient": 3,
+      "doctor": 4
+    }
+  },
+  {
+    "pk": 11,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:30:00",
+      "patient": null,
+      "doctor": 4
+    }
+  },
+  {
+    "pk": 12,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-11T12:00:00",
+      "patient": 1,
+      "doctor": 4
+    }
+  },
+  {
+    "pk": 13,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:00:00",
+      "patient": 4,
+      "doctor": 7
+    }
+  },
+  {
+    "pk": 14,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:15:00",
+      "patient": 3,
+      "doctor": 7
+    }
+  },
+  {
+    "pk": 15,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:30:00",
+      "patient": 2,
+      "doctor": 7
+    }
+  },
+  {
+    "pk": 16,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-11T12:00:00",
+      "patient": 1,
+      "doctor": 7
+    }
+  },
+  {
+    "pk": 17,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:00:00",
+      "patient": 4,
+      "doctor": 5
+    }
+  },
+  {
+    "pk": 18,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:15:00",
+      "patient": 3,
+      "doctor": 5
+    }
+  },
+  {
+    "pk": 19,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-10T12:30:00",
+      "patient": 3,
+      "doctor": 5
+    }
+  },
+  {
+    "pk": 20,
+    "model": "stats.ticket",
+    "fields": {
+      "datetime": "2014-08-11T12:00:00",
+      "patient": 1,
+      "doctor": 5
+    }
+  }
+]

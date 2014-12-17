@@ -1,14 +1,14 @@
 # settings/local.py
 from .base import *
 
-#DEBUG
+# DEBUG
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 SESSION_SAVE_EVERY_REQUEST = True
 
 ALLOWED_HOSTS = []
 
-#DATABASE
+# DATABASE
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -16,5 +16,5 @@ DATABASES = {
     }
 }
 
-#TEMPLATE
+# TEMPLATE
 TEMPLATE_CONTEXT_PROCESSORS += ('django.core.context_processors.debug',)

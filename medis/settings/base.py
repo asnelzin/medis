@@ -12,19 +12,19 @@ def get_env_variable(var_name):
         error_msg = "Set the %s environment variable" % var_name
         raise ImproperlyConfigured(error_msg)
 
-#PATH CONFIGURATION
+# PATH CONFIGURATION
 here = lambda *x: join(abspath(dirname(__file__)), *x)
 PROJECT_ROOT = here("..", "..")
 root = lambda *x: join(abspath(PROJECT_ROOT), *x)
 
-#MANAGER CONFIGURATION
+# MANAGER CONFIGURATION
 ADMINS = (
     ('Alexander Nelzin', 'asnelzin@gmail.com'),
 )
 
 MANAGERS = ADMINS
 
-#GENERAL CONFIGURATION
+# GENERAL CONFIGURATION
 TIME_ZONE = 'UTC'
 DEFAULT_CHARSET = 'utf-8'
 LANGUAGE_CODE = 'ru'
@@ -34,12 +34,12 @@ SITE_ID = 1
 USE_I18N = False
 USE_L10N = True
 
-#MEDIA
+# MEDIA
 MEDIA_ROOT = root('files/media')
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/admin-media/'
 
-#STATIC FILES
+# STATIC FILES
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
@@ -51,7 +51,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
 )
 
-#TEMPLATE
+# TEMPLATE
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
@@ -70,7 +70,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 
-#MIDDLWARE
+# MIDDLEWARE
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -78,7 +78,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-#APP
+# APP
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -89,8 +89,8 @@ INSTALLED_APPS = (
     'medis.apps.stats',
 )
 
-#URL
+# URL
 ROOT_URLCONF = 'medis.urls'
 
-#KEY
+# KEY
 SECRET_KEY = get_env_variable('SECRET_KEY')

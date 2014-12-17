@@ -1,14 +1,14 @@
 # settings/production.py
 from .base import *
 
-#DEBUG
+# DEBUG
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 SESSION_SAVE_EVERY_REQUEST = False
 
 ALLOWED_HOSTS = ['*']
 
-#DATABASE
+# DATABASE
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -19,5 +19,5 @@ DATABASES = {
     }
 }
 
-#STATIC
+# STATIC
 STATIC_ROOT = root('files/static')

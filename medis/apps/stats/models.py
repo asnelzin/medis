@@ -33,7 +33,7 @@ admin.site.register(Speciality)
 
 class Doctor(models.Model):
     name = models.CharField(max_length=255, verbose_name='ФИО врача')
-    specialty = models.ForeignKey(Speciality)
+    speciality = models.ForeignKey(Speciality)
 
     class Meta:
         verbose_name = 'Врач'
@@ -63,21 +63,21 @@ admin.site.register(Patient)
 class TicketManager(models.Manager):
     def get_monthly_stats(self, month, year):
         data = []
-        for specialty in Speciality.objects.all():
-            tickets = Ticket.objects.filter(doctor__in=specialty.doctor_set.all(), datetime__month=month,
+        for speciality in Speciality.objects.all():
+            tickets = Ticket.objects.filter(doctor__in=speciality.doctor_set.all(), datetime__month=month,
                                             datetime__year=year)
             patients = tickets.exclude(patient__isnull=True)
             data.append({
-                'pk': specialty.pk,
-                'name': specialty.name,
+                'pk': speciality.pk,
+                'name': speciality.name,
                 'tickets': tickets.count(),
                 'patients': patients.count()
             })
         return data
 
-    def get_speciality_stats(self, specialty, month, year):
+    def get_speciality_stats(self, speciality, month, year):
         data = []
-        for doctor in Doctor.objects.filter(specialty=specialty):
+        for doctor in Doctor.objects.filter(speciality=speciality):
             tickets = Ticket.objects.filter(doctor=doctor, datetime__month=month, datetime__year=year)
             patients = tickets.exclude(patient__isnull=True)
             data.append({

@@ -48,14 +48,14 @@
                 <th>Кол-во пациентов</th>
             </tr>
             </thead>
-            {% for specialty in data %}
+            {% for speciality in data %}
                 <tr>
                     <td>{{ forloop.counter }}</td>
-                    <td><a href="{% url 'stats:month-speciality'%}?speciality={{ specialty.pk }}&month={{ current_date.month }}&year={{ current_date.year }}">
-                        {{ specialty.name }}
+                    <td><a href="{% url 'stats:month-speciality'%}?speciality={{ speciality.pk }}&month={{ current_date.month }}&year={{ current_date.year }}">
+                        {{ speciality.name }}
                     </a></td>
-                    <td>{{ specialty.tickets }}</td>
-                    <td>{{ specialty.patients }}</td>
+                    <td>{{ speciality.tickets }}</td>
+                    <td>{{ speciality.patients }}</td>
                 </tr>
             {% endfor %}
         </table>

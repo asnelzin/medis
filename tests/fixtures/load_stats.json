@@ -24,7 +24,7 @@
     "model": "stats.doctor",
     "fields": {
       "name": "\u0411\u044b\u043a\u043e\u0432 \u0410\u043d\u0434\u0440\u0435\u0439 \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447 ",
-      "specialty": 1
+      "speciality": 1
     }
   },
   {
@@ -32,7 +32,7 @@
     "model": "stats.doctor",
     "fields": {
       "name": "\u041b\u043e\u0431\u0430\u043d\u043e\u0432 \u0421\u0435\u043c\u0451\u043d \u0421\u0435\u043c\u0451\u043d\u043e\u0432\u0438\u0447",
-      "specialty": 2
+      "speciality": 2
     }
   },
   {
@@ -40,7 +40,7 @@
     "model": "stats.doctor",
     "fields": {
       "name": "\u041b\u0435\u0432\u0438\u043d \u0411\u043e\u0440\u0438\u0441 \u0410\u0440\u043a\u0430\u0434\u044c\u0435\u0432\u0438\u0447",
-      "specialty": 1
+      "speciality": 1
     }
   },
   {
@@ -48,7 +48,7 @@
     "model": "stats.doctor",
     "fields": {
       "name": "\u0427\u0435\u0440\u043d\u043e\u0443\u0441 \u0412\u0430\u0440\u0432\u0430\u0440\u0430 \u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u043d\u0430 ",
-      "specialty": 3
+      "speciality": 3
     }
   },
   {
@@ -56,7 +56,7 @@
     "model": "stats.doctor",
     "fields": {
       "name": "\u0423\u043b\u044c\u044f\u043d\u043e\u0432\u0430 \u041f\u043e\u043b\u0438\u043d\u0430 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u043d\u0430",
-      "specialty": 3
+      "speciality": 3
     }
   },
   {
@@ -64,7 +64,7 @@
     "model": "stats.doctor",
     "fields": {
       "name": "\u041a\u0430\u043b\u0438\u043d\u0438\u043d\u0430 \u0421\u043e\u0444\u044c\u044f \u042f\u043a\u043e\u0432\u043b\u0435\u0432\u043d\u0430 ",
-      "specialty": 3
+      "speciality": 3
     }
   },
   {
@@ -72,7 +72,7 @@
     "model": "stats.doctor",
     "fields": {
       "name": "\u041a\u043e\u0440\u043d\u0435\u0435\u0432 \u041c\u0430\u043a\u0441\u0438\u043c \u041b\u0435\u043e\u043d\u0438\u0434\u043e\u0432\u0438\u0447 ",
-      "specialty": 4
+      "speciality": 4
     }
   },
   {

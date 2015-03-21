@@ -4,12 +4,12 @@ from __future__ import unicode_literals
 import json
 from datetime import datetime
 
-from django.http import HttpResponse
 from django.core.serializers.json import DjangoJSONEncoder
-from django.views.generic import View, FormView, TemplateView
+from django.http import HttpResponse
+from django.views.generic import FormView, TemplateView, View
 
 from medis.apps.stats.forms import FilterForm
-from medis.apps.stats.models import Ticket, Speciality
+from medis.apps.stats.models import Speciality, Ticket
 
 
 class AjaxMonthStatsView(View):

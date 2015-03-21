@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, url
 
-from medis.apps.stats.views import MonthStatsView, AjaxMonthStatsView, SpecialityStatsView
+from medis.apps.stats.views import (AjaxMonthStatsView, MonthStatsView,
+                                    SpecialityStatsView)
 
 urlpatterns = patterns(
     '',

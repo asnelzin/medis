@@ -10,7 +10,7 @@
 {% block content %}
     <div class="row">
         <form id="filter-form" class="form-inline" method="post" role="form"
-              action="{% url 'stats:month-ajax' %}">
+              action="{% url 'stats:month' %}">
             {% csrf_token %}
             <h2 class="form-signin-heading">Месечная статистика количества посещений</h2>
             {{ form.non_field_errors }}

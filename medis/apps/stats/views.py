@@ -12,7 +12,10 @@ from medis.apps.stats.forms import FilterForm
 from medis.apps.stats.models import Speciality, Ticket
 
 
-class AjaxMonthStatsView(View):
+class MonthStatsView(FormView):
+    form_class = FilterForm
+    template_name = 'stats/month.html'
+
     def get_form_errors(self, form):
         return dict([(k, [unicode(e) for e in v]) for k, v in form.errors.items()])
 
@@ -26,22 +29,6 @@ class AjaxMonthStatsView(View):
         json_context = self.data_to_json(self.get_form_errors(form))
         return HttpResponse(json_context, content_type='application/json', status=status)
 
-    def post(self, request, *args, **kwargs):
-        if request.is_ajax():
-            form = FilterForm(request.POST)
-            if form.is_valid():
-                data = Ticket.objects.get_monthly_stats(form.data['month'], form.data['year'])
-                return self.render_json_response(self.data_to_json(data))
-            else:
-                return self.render_form_error_json_response(form)
-        else:
-            return self.render_json_response('', 404)
-
-
-class MonthStatsView(FormView):
-    form_class = FilterForm
-    template_name = 'stats/month.html'
-
     def get_context_data(self, **kwargs):
         context = super(MonthStatsView, self).get_context_data(**kwargs)
 
@@ -52,6 +39,17 @@ class MonthStatsView(FormView):
             'data': data
         })
         return context
+
+    def post(self, request, *args, **kwargs):
+        if request.is_ajax():
+            form = FilterForm(request.POST)
+            if form.is_valid():
+                data = Ticket.objects.get_monthly_stats(form.data['month'], form.data['year'])
+                return self.render_json_response(self.data_to_json(data))
+            else:
+                return self.render_form_error_json_response(form)
+        else:
+            return self.render_json_response('', 404)
 
 
 class SpecialityStatsView(TemplateView):

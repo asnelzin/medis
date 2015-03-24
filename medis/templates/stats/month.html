@@ -9,14 +9,12 @@
 
 {% block content %}
     <div class="row">
-        <form id="filter-form" class="form-inline" method="post" role="form"
-              action="{% url 'stats:month' %}">
+        <form id="filter-form" class="form-inline" method="get" role="form" action>
             {% csrf_token %}
             <h2 class="form-signin-heading">Месечная статистика количества посещений</h2>
             {{ form.non_field_errors }}
 
             <div class="form-group">
-                {{ form.month.errors }}
                 <select class="form-control" name="month" id="id_month">
                     {% for choice in form.month.field.choices %}
                         <option {% if choice.0 == form.month.field.initial %}selected{% endif %}
@@ -26,7 +24,6 @@
             </div>
 
             <div class="form-group">
-                {{ form.year.errors }}
                 <select class="form-control" name="year" id="id_year">
                     {% for choice in form.year.field.choices %}
                         <option {% if choice.0 == form.year.field.initial %}selected{% endif %}

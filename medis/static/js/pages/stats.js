@@ -3,11 +3,11 @@
     function ajaxSuccess(data) {
         var month = $("#id_month").find("option:selected").attr("value");
         var year = $("#id_year").find("option:selected").text();
-        for (var idx in data) {
-            var url = "/stats/spec/?speciality=" + data[idx].pk + "&month=" + month + "&year=" + year;
-            $("tr:has(td:contains(" + data[idx].name + ")) td:nth-child(2) a").attr("href", url);
-            $("tr:has(td:contains(" + data[idx].name + ")) td:nth-child(3)").text(data[idx].tickets);
-            $("tr:has(td:contains(" + data[idx].name + ")) td:nth-child(4)").text(data[idx].patients);
+        for (var item of data) {
+            var url = "/stats/spec/?speciality=" + item.pk + "&month=" + month + "&year=" + year;
+            $("tr:has(td:contains(" + item.name + ")) td:nth-child(2) a").attr("href", url);
+            $("tr:has(td:contains(" + item.name + ")) td:nth-child(3)").text(item.tickets);
+            $("tr:has(td:contains(" + item.name + ")) td:nth-child(4)").text(item.patients);
         }
     }
 
